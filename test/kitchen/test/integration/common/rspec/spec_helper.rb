@@ -282,7 +282,7 @@ shared_examples_for "a running Agent with no errors" do
   it 'is not bound to the port that receives traces when apm_enabled is set to false' do
 
     if os != :windows
-      system('sudo sh -c \'sed -i "/^api_key: .*/a apm_config:\nenabled: false" /etc/datadog-agent/datadog.yaml\'')
+      system('sudo sh -c \'sed -i "/^api_key: .*/a apm_config:\\\\nenabled: false" /etc/datadog-agent/datadog.yaml\'')
     else
       conf_path = "#{ENV['ProgramData']}\\Datadog\\datadog.yaml"
       open(conf_path, 'w') do |f|

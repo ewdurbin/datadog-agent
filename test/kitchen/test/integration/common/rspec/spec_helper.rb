@@ -198,7 +198,7 @@ shared_examples_for "an installed Agent" do
   it 'is properly signed' do
     if os == :windows
       # The user in the yaml file is "datadog", however the default test kitchen user is azure.
-      # This allows either to be used without changing the test. 
+      # This allows either to be used without changing the test.
       msi_path_base = 'C:\\Users\\'
       msi_path_end = '\\AppData\\Local\\Temp\\kitchen\\cache\\ddagent-cli.msi'
       msi_path_azure = msi_path_base + 'azure' + msi_path_end
@@ -242,9 +242,9 @@ shared_examples_for "a running Agent with no errors" do
     # sleep a few seconds to let the collector finish its first run
     # This seems to happen on windows, too
     if os != :windows
-      system('command -v systemctl 2>&1 > /dev/null && sleep 5')
+      system('command -v systemctl 2>&1 > /dev/null && sleep 15')
     else
-      sleep 5
+      sleep 15
     end
 
     json_info_output = json_info

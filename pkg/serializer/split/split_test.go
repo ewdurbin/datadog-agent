@@ -16,7 +16,7 @@ import (
 
 func TestSplitPayloadsSeries(t *testing.T) {
 	testSeries := metrics.Series{}
-	for i := 0; i < 30000; i++ {
+	for i := 0; i < 3000; i++ {
 		point := metrics.Serie{
 			Points: []metrics.Point{
 				{Ts: 12345.0, Value: float64(21.21)},
@@ -64,7 +64,7 @@ func TestSplitPayloadsSeries(t *testing.T) {
 
 func TestSplitPayloadsEvents(t *testing.T) {
 	testEvent := metrics.Events{}
-	for i := 0; i < 30000; i++ {
+	for i := 0; i < 3000; i++ {
 		event := metrics.Event{
 			Title:          "test title",
 			Text:           "test text",
@@ -98,7 +98,7 @@ func TestSplitPayloadsEvents(t *testing.T) {
 
 func TestSplitPayloadsServiceChecks(t *testing.T) {
 	testServiceChecks := metrics.ServiceChecks{}
-	for i := 0; i < 30000; i++ {
+	for i := 0; i < 3000; i++ {
 		sc := metrics.ServiceCheck{
 			CheckName: "test.check",
 			Host:      "test.localhost",
